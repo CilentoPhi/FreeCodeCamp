@@ -1,0 +1,19 @@
+function palindrome(str) {
+    let regex = /[.,\/#!$%\^&\*;:{}=\-_`~()\s]/gi
+    let newStr = str.replace(regex,'').toLowerCase();
+    let palindrome = [];
+    for (let i = newStr.length - 1; i >= 0; i-- ) {
+        palindrome.push(newStr[i])
+    }
+    console.log("PALINDROMO ANTES DO JOIN: " + palindrome);
+    palindrome = palindrome.join('').replace(regex,'');
+    console.log("AO CONTRARIO: " + palindrome);
+    console.log("STRING NORMAL: " + newStr);
+    if ( palindrome == newStr ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+palindrome("eye");

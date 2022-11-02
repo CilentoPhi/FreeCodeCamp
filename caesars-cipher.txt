@@ -1,0 +1,19 @@
+function rot13(str) {
+    const letters1 = ['A','B','C','D','E','F','G','H','I','J','K','L','M'];
+    const letters2 = ['N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    const cifra = [];
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] == ' ') {
+          cifra.push(' ');
+        } else if (letters1.includes(str[i])) {
+          cifra.push(letters2[letters1.indexOf(str[i])]);
+        } else if (letters2.includes(str[i])) {
+          cifra.push(letters1[letters2.indexOf(str[i])]);
+        } else {
+          cifra.push(str[i]);
+        }
+    }
+    return cifra.join('');
+  }
+
+rot13("SERR PBQR PNZC");
